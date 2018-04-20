@@ -1,0 +1,98 @@
+import java.util.*;
+import javax.swing.*;
+
+/**
+ * The student class defines a student name attributes and get grades and
+ * returns overall grade of student.
+ * 
+ *
+ */
+public class Student {
+	/**
+	 * Declaration of private string name and declares a reference
+	 * studentsGrades
+	 */
+
+	private String name;
+	Grades studentsGrades;
+
+	/**
+	 * Scanner object for student grade and names
+	 */
+	Scanner keyboard = new Scanner(System.in);
+
+	/**
+	 * Scanner object for student grade and names
+	 */
+
+	public void setup() {
+		studentsGrades = new Grades(); 
+		setName();
+		setGrades();
+
+	}
+
+	/**
+	 * The set name method prompts user to enter name last name, first name  from a dialog box and
+	 * changes it to first name last name with comma between them
+	 */
+
+	private void setName() {
+		String firstName;
+		String lastName;
+		
+		name = JOptionPane.showInputDialog("Please, enter the student's name in the form of \"Doe,John\": "); //input box for user to enter name
+		JOptionPane.showMessageDialog(null, "You entered student name: " + name); //display name that was typed
+
+		/**
+		 * Separated students name by the comma and stored the values in first
+		 * name and last name and trimmed to remove spaces
+		 */
+		int commaIndex = name.indexOf(","); // this line finds the index of the
+											// comma and set the index for comma
+											// as integer
+		firstName = name.substring(commaIndex + 1); // first name starts at the
+													// comma index plus next
+													// place
+		lastName = name.substring(0, commaIndex); // last name starts with the
+													// first element to comma
+													// index
+
+		name = (firstName + ", " + lastName + ":").trim(); // set name first
+															// name, last name
+															// and trims the
+															// spacing before
+															// and after
+
+	}
+
+	/**
+	 * This method gets grades from grades class setup by invoking grades setup
+	 */
+	private void setGrades() {
+
+		studentsGrades.setup();
+
+	}
+
+	/**
+	 * This method invokes students grades average from grades class and returns
+	 * the average
+	 */
+	public double overallGrade() {
+
+		return studentsGrades.average();
+	}
+
+	/**
+	 * This method get displays student's name in its current state and then
+	 * invokes students grades display
+	 */
+
+	public void display() {
+		System.out.print(name);
+		studentsGrades.display();
+
+	}
+
+}
