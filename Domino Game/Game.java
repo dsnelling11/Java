@@ -3,7 +3,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.*;
 
 /**
- * This is the domino panel that contains the constructor for my domino program
+ * This is the domino frame that contains the constructor for my domino program
  * 
  * @author Darries Snelling
  *
