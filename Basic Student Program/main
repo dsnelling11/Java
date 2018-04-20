@@ -1,0 +1,50 @@
+//This file contains the main file to test the program
+
+//This is the main class that contains
+//the main program in a console application
+
+/**
+ * This is the main program that instantiates a new objects using the students
+ * and grades class.
+ * 
+ * @author Secon
+ *
+ */
+public class Program {
+	public static void main(String[] args) {
+
+		String divider = "----------------------------------------------------------"; //used to divide displayed information
+
+		System.out.println("\"Hola! Como estas.\""); //print hello, how are you on screen
+
+		Student darries;
+		Student jonny;
+		Student mary;
+
+		darries = new Student();
+		jonny = new Student();
+		mary = new Student();
+
+		darries.setup();
+		jonny.setup();
+		mary.setup();
+
+		System.out.println("");
+
+		System.out.println("Student's Grades");
+		System.out.println(divider); //print out the divider on the screen
+		darries.display();
+		jonny.display();
+		mary.display();
+		
+		double darriesOverallGrade = darries.overallGrade();
+		double jonnyOverallGrade =  jonny.overallGrade();
+		double maryOverallGrade = mary.overallGrade();
+		
+
+		System.out.println(" ");
+		System.out.println("The overall section average is: " + (darriesOverallGrade + jonnyOverallGrade + maryOverallGrade) / 3);
+		System.out.println(divider);
+
+	}
+}
