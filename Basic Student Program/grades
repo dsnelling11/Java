@@ -1,0 +1,54 @@
+# Java
+
+import java.util.*;
+import javax.swing.*;
+
+<javdocs>
+/**
+ * This program prompts user to enter grades, displays the grades on the screen
+ * and calculates and returns the Average
+ * 
+ *
+ *
+ */
+
+public class Grades {
+
+	/**
+	 * These are declared references used for the get grades
+	 */
+
+	private int programGrade, examGrade;
+
+	/**
+	 * This method sets the Grades using a dialog box to collect information from the user
+	 */
+
+	public void setup() {
+		Scanner keyboard = new Scanner(System.in);
+		programGrade = Integer.parseInt(JOptionPane.showInputDialog("Please, enter the program grade: ")); //converted dialog box information into integer 
+		examGrade = Integer.parseInt(JOptionPane.showInputDialog("Please, enter the exam grade : "));
+		JOptionPane.showMessageDialog(null,"You entered student's grades: " + " Program grade =" + programGrade + "  " + " Exam grade= " + examGrade); //display typed information
+		
+	}
+
+	/**
+	 * This method displays the Grades class to the screen
+	 */
+
+	public void display() {
+		System.out.println("\t\t" + programGrade + "\t" + examGrade);
+	}
+
+	/**
+	 * This method returns the average using the constants of the program weight
+	 * and exam weight
+	 */
+	public double average() {
+		final double PROGRAM_WEIGHT = .50, EXAM_WEIGHT = 1 - PROGRAM_WEIGHT;
+		double theOverallGrade = programGrade * PROGRAM_WEIGHT + examGrade * EXAM_WEIGHT;
+		return theOverallGrade;
+
+	}
+
+}
