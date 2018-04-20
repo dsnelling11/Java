@@ -2,7 +2,7 @@ import java.awt.*;
 
 /**
  * 
- * @author Darries Snelling
+ * Darries Snelling
  * 
  *         This is the main datatype that instantiates the domino object in the
  *         domino class
